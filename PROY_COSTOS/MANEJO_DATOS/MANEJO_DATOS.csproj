@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B54F5F18-5A1A-4346-8E6F-B4B1B56BB949}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MANEJO_DATOS</RootNamespace>
+    <AssemblyName>MANEJO_DATOS</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MD_CECO.cs" />
+    <Compile Include="MD_CONSULTA_MO.cs" />
+    <Compile Include="MD_CONSUMO_TEORICO_ME.cs" />
+    <Compile Include="MD_INICIO.cs" />
+    <Compile Include="MD_MATERIAL.cs" />
+    <Compile Include="MD_MAESTROS.cs" />
+    <Compile Include="MD_PLAN.cs" />
+    <Compile Include="MD_PPTO_INSUMOS.cs" />
+    <Compile Include="MD_PPTO_MO.cs" />
+    <Compile Include="MD_PPTO_REAL.cs" />
+    <Compile Include="MD_REAL_INSUMOS.cs" />
+    <Compile Include="MD_REAL_MO.cs" />
+    <Compile Include="MD_RECETA.cs" />
+    <Compile Include="MD_TCAMBIO.cs" />
+    <Compile Include="MD_VERSION.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SomeResource.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CONEXION\CONEXION.csproj">
+      <Project>{01c3c2a6-6935-4e88-a7c8-8c94230db737}</Project>
+      <Name>CONEXION</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

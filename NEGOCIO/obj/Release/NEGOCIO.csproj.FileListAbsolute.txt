@@ -1,0 +1,33 @@
+C:\APLICATIVOS\P_COSTOS_CCAUSO\PROY_COSTOS\NEGOCIO\bin\Release\NEGOCIO.dll
+C:\APLICATIVOS\P_COSTOS_CCAUSO\PROY_COSTOS\NEGOCIO\bin\Release\NEGOCIO.pdb
+C:\APLICATIVOS\P_COSTOS_CCAUSO\PROY_COSTOS\NEGOCIO\bin\Release\MANEJO_DATOS.dll
+C:\APLICATIVOS\P_COSTOS_CCAUSO\PROY_COSTOS\NEGOCIO\bin\Release\CONEXION.dll
+C:\APLICATIVOS\P_COSTOS_CCAUSO\PROY_COSTOS\NEGOCIO\bin\Release\MANEJO_DATOS.pdb
+C:\APLICATIVOS\P_COSTOS_CCAUSO\PROY_COSTOS\NEGOCIO\bin\Release\CONEXION.pdb
+C:\APLICATIVOS\P_COSTOS_CCAUSO\PROY_COSTOS\NEGOCIO\obj\Release\NEGOCIO.csproj.AssemblyReference.cache
+C:\APLICATIVOS\P_COSTOS_CCAUSO\PROY_COSTOS\NEGOCIO\obj\Release\NEGOCIO.csproj.CoreCompileInputs.cache
+C:\APLICATIVOS\P_COSTOS_CCAUSO\PROY_COSTOS\NEGOCIO\obj\Release\NEGOCIO.csproj.CopyComplete
+C:\APLICATIVOS\P_COSTOS_CCAUSO\PROY_COSTOS\NEGOCIO\obj\Release\NEGOCIO.dll
+C:\APLICATIVOS\P_COSTOS_CCAUSO\PROY_COSTOS\NEGOCIO\obj\Release\NEGOCIO.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS\NEGOCIO\bin\Release\NEGOCIO.dll
+C:\Users\usuario\Downloads\PROY_COSTOS\NEGOCIO\bin\Release\NEGOCIO.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS\NEGOCIO\bin\Release\MANEJO_DATOS.dll
+C:\Users\usuario\Downloads\PROY_COSTOS\NEGOCIO\bin\Release\CONEXION.dll
+C:\Users\usuario\Downloads\PROY_COSTOS\NEGOCIO\bin\Release\MANEJO_DATOS.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS\NEGOCIO\bin\Release\CONEXION.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS\NEGOCIO\obj\Release\NEGOCIO.csproj.AssemblyReference.cache
+C:\Users\usuario\Downloads\PROY_COSTOS\NEGOCIO\obj\Release\NEGOCIO.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Downloads\PROY_COSTOS\NEGOCIO\obj\Release\NEGOCIO.csproj.CopyComplete
+C:\Users\usuario\Downloads\PROY_COSTOS\NEGOCIO\obj\Release\NEGOCIO.dll
+C:\Users\usuario\Downloads\PROY_COSTOS\NEGOCIO\obj\Release\NEGOCIO.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\NEGOCIO\bin\Release\NEGOCIO.dll
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\NEGOCIO\bin\Release\NEGOCIO.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\NEGOCIO\bin\Release\MANEJO_DATOS.dll
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\NEGOCIO\bin\Release\CONEXION.dll
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\NEGOCIO\bin\Release\MANEJO_DATOS.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\NEGOCIO\bin\Release\CONEXION.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\NEGOCIO\obj\Release\NEGOCIO.csproj.AssemblyReference.cache
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\NEGOCIO\obj\Release\NEGOCIO.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\NEGOCIO\obj\Release\NEGOCIO.csproj.CopyComplete
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\NEGOCIO\obj\Release\NEGOCIO.dll
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\NEGOCIO\obj\Release\NEGOCIO.pdb
