@@ -34,7 +34,7 @@ namespace PROY_COSTOS.GENERALES
         }
         private void ListarDatos()
         {
-            oDv = new DataView(oN.lstCampania(2));
+            oDv = new DataView(oN.lstCampania(2,""));
             dgbDatos.DataSource = oDv;
         }
         private void FRM_CAMPANIA_FormClosing(object sender, FormClosingEventArgs e)
@@ -138,12 +138,13 @@ namespace PROY_COSTOS.GENERALES
                 string rpta = "";
                 if (validarDatos())
                 {
-                    rpta = oN.insert_Campania
+                    rpta = oN.mtto_campania
                                 (
                                     this.txtCampania.Text.Trim().ToUpper(),
                                     this.txtFechaInicio.Text.Trim(),
                                     this.txtFechaFin.Text.Trim(),
-                                    1
+                                    "osanchez",0,"N"
+
                                 ); ;
                 }
                 limpiar();

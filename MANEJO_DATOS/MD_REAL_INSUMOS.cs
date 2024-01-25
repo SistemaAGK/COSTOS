@@ -80,7 +80,7 @@ namespace MANEJO_DATOS
             List<SqlParameter> listP = new List<SqlParameter>();
             return oConn.filtrarRegistros("[SP_INS_TEMP_REAL_LST]", listP);
         }
-        public string insertREAL()
+        public string insertREAL(int log)
         {
             try
             {
@@ -91,6 +91,7 @@ namespace MANEJO_DATOS
                         ocmd.Connection = oconexion;
                         ocmd.CommandType = CommandType.StoredProcedure;
                         ocmd.CommandText = "[SP_INS_REAL_READ_INSERT]";
+                        ocmd.Parameters.Add("@log", SqlDbType.Int).Value = log;
                         ocmd.CommandTimeout = 900000;
                         ocmd.ExecuteNonQuery();
                         oconexion.Close();

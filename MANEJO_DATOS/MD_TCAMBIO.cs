@@ -73,5 +73,34 @@ namespace MANEJO_DATOS
             List<SqlParameter> listP = new List<SqlParameter>();
             return oConn.filtrarRegistros("SP_GE_CAMBIO_DIARIO_LST", listP);
         }
+        /*TIPO DE CAMBIO MENSUAL - PROMEDIANDO TC DIARIO :: INICIO */
+        public string insertTipoCambio_Mensual(int anio, int periodo, decimal cambio, string usuario)
+        {
+
+            try
+            {
+                using (SqlConnection oconexion = oConn.obtenerConexion())
+                {
+                    using (SqlCommand ocmd = new SqlCommand())
+                    {
+                        ocmd.Connection = oconexion;
+                        ocmd.CommandType = CommandType.StoredProcedure;
+                        ocmd.CommandText = "[SP_GE_CAMBIO_MENSUAL_INSERT]";
+                        ocmd.Parameters.Add("@anio", SqlDbType.Int).Value = anio;
+                        ocmd.Parameters.Add("@periodo", SqlDbType.Int).Value = periodo;
+                        ocmd.Parameters.Add("@cambio", SqlDbType.Float).Value = cambio;
+                        ocmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario;
+                        ocmd.ExecuteNonQuery();
+                        oconexion.Close();
+                    }
+                }
+                return "OK";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+        /*TIPO DE CAMBIO MENSUAL - PROMEDIANDO TC DIARIO :: FIN */
     }
 }

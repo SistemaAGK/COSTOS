@@ -13,7 +13,7 @@ namespace MANEJO_DATOS
     {
         Conexion oConn = new Conexion();
 
-        public string crearVersion(int opc, int indicador,string descripcion, int usuario)
+        public string crearVersion(int opc, int indicador,string descripcion, string usuario, int estado, string accion, int codigo)
         {
 
             try
@@ -28,7 +28,10 @@ namespace MANEJO_DATOS
                         ocmd.Parameters.Add("@opc", SqlDbType.Int).Value = opc;
                         ocmd.Parameters.Add("@indicador", SqlDbType.Int).Value = indicador;
                         ocmd.Parameters.Add("@descripcion", SqlDbType.VarChar, 100).Value = descripcion;
-                        ocmd.Parameters.Add("@usuario", SqlDbType.Int).Value = usuario;
+                        ocmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario;
+                        ocmd.Parameters.Add("@estado", SqlDbType.Int).Value = estado;
+                        ocmd.Parameters.Add("@accion", SqlDbType.VarChar).Value = accion;
+                        ocmd.Parameters.Add("@cod_version", SqlDbType.Int).Value = codigo;
                         ocmd.ExecuteNonQuery();
                         oconexion.Close();
                     }

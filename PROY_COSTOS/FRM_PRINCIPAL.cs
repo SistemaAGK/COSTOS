@@ -83,9 +83,12 @@ namespace PROY_COSTOS
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            FRM_CAMPANIA frm = FRM_CAMPANIA.GetInstancia();
-            frm.MdiParent = this;
-            frm.Show();
+            //FRM_CAMPANIA frm = FRM_CAMPANIA.GetInstancia();
+            //frm.MdiParent = this;
+            //frm.Show();
+            MTTO_CAMPAÑA frm_2 = MTTO_CAMPAÑA.GetInstancia();
+            frm_2.MdiParent = this;
+            frm_2.Show();
         }
         private void cECOToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -247,6 +250,20 @@ namespace PROY_COSTOS
         {
             MANO_DE_OBRA.FRM_MO_CONSULTA frm = new MANO_DE_OBRA.FRM_MO_CONSULTA();
 
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void tb_Labor_Click(object sender, EventArgs e)
+        {
+            MANO_DE_OBRA.FRM_MO_LABORES frm = new MANO_DE_OBRA.FRM_MO_LABORES();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void tarifasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MANO_DE_OBRA.Maestros.FRM_MO_TARIFAS frm = new MANO_DE_OBRA.Maestros.FRM_MO_TARIFAS();
             frm.MdiParent = this;
             frm.Show();
         }

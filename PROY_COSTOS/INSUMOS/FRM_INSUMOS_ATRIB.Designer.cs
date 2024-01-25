@@ -80,10 +80,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(10, 11);
+            this.tabControl1.Location = new System.Drawing.Point(13, 15);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(942, 618);
+            this.tabControl1.Size = new System.Drawing.Size(1256, 761);
             this.tabControl1.TabIndex = 53;
             // 
             // tabPage1
@@ -92,10 +93,11 @@
             this.tabPage1.Controls.Add(this.progressBar);
             this.tabPage1.Controls.Add(this.panel3);
             this.tabPage1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(934, 592);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1248, 732);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "IMPORTACION - EXCEL";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -108,9 +110,10 @@
             this.panel2.Controls.Add(this.btnCargar);
             this.panel2.Controls.Add(this.lblTotal);
             this.panel2.Controls.Add(this.btnExcel);
-            this.panel2.Location = new System.Drawing.Point(6, 6);
+            this.panel2.Location = new System.Drawing.Point(8, 7);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(921, 53);
+            this.panel2.Size = new System.Drawing.Size(1227, 65);
             this.panel2.TabIndex = 16;
             // 
             // btnCargar
@@ -118,9 +121,10 @@
             this.btnCargar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCargar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnCargar.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(769, 7);
+            this.btnCargar.Location = new System.Drawing.Point(1025, 9);
+            this.btnCargar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(147, 36);
+            this.btnCargar.Size = new System.Drawing.Size(196, 44);
             this.btnCargar.TabIndex = 53;
             this.btnCargar.Text = "CARGAR";
             this.btnCargar.UseVisualStyleBackColor = false;
@@ -130,9 +134,10 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(14, 16);
+            this.lblTotal.Location = new System.Drawing.Point(19, 20);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(0, 22);
+            this.lblTotal.Size = new System.Drawing.Size(0, 28);
             this.lblTotal.TabIndex = 52;
             // 
             // btnExcel
@@ -140,9 +145,10 @@
             this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnExcel.BackColor = System.Drawing.Color.White;
             this.btnExcel.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcel.Location = new System.Drawing.Point(616, 7);
+            this.btnExcel.Location = new System.Drawing.Point(821, 9);
+            this.btnExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(147, 36);
+            this.btnExcel.Size = new System.Drawing.Size(196, 44);
             this.btnExcel.TabIndex = 0;
             this.btnExcel.Text = "EXCEL";
             this.btnExcel.UseVisualStyleBackColor = false;
@@ -152,9 +158,10 @@
             // 
             this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar.Location = new System.Drawing.Point(7, 557);
+            this.progressBar.Location = new System.Drawing.Point(9, 686);
+            this.progressBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(920, 23);
+            this.progressBar.Size = new System.Drawing.Size(1227, 28);
             this.progressBar.TabIndex = 51;
             // 
             // panel3
@@ -164,9 +171,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.dgvDatos);
-            this.panel3.Location = new System.Drawing.Point(6, 65);
+            this.panel3.Location = new System.Drawing.Point(8, 80);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(921, 486);
+            this.panel3.Size = new System.Drawing.Size(1227, 598);
             this.panel3.TabIndex = 15;
             // 
             // dgvDatos
@@ -180,6 +188,7 @@
             this.dgvDatos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDatos.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.dgvDatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvDatos.ColumnHeadersHeight = 29;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -190,23 +199,26 @@
             this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDatos.Location = new System.Drawing.Point(0, 0);
+            this.dgvDatos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersVisible = false;
+            this.dgvDatos.RowHeadersWidth = 51;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.dgvDatos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDatos.Size = new System.Drawing.Size(919, 484);
+            this.dgvDatos.Size = new System.Drawing.Size(1225, 596);
             this.dgvDatos.TabIndex = 6;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel4);
             this.tabPage2.Controls.Add(this.panel1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(934, 592);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1248, 732);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "VERIFICACIONES / CARGA";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -231,18 +243,20 @@
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Location = new System.Drawing.Point(6, 6);
+            this.panel4.Location = new System.Drawing.Point(8, 7);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(921, 53);
+            this.panel4.Size = new System.Drawing.Size(1227, 65);
             this.panel4.TabIndex = 17;
             // 
             // lblCodArea
             // 
             this.lblCodArea.AutoSize = true;
             this.lblCodArea.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodArea.Location = new System.Drawing.Point(440, -2);
+            this.lblCodArea.Location = new System.Drawing.Point(587, -2);
+            this.lblCodArea.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodArea.Name = "lblCodArea";
-            this.lblCodArea.Size = new System.Drawing.Size(67, 13);
+            this.lblCodArea.Size = new System.Drawing.Size(88, 17);
             this.lblCodArea.TabIndex = 82;
             this.lblCodArea.Text = "lblCodArea";
             // 
@@ -250,9 +264,10 @@
             // 
             this.lblCodMaterial.AutoSize = true;
             this.lblCodMaterial.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodMaterial.Location = new System.Drawing.Point(340, -2);
+            this.lblCodMaterial.Location = new System.Drawing.Point(453, -2);
+            this.lblCodMaterial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodMaterial.Name = "lblCodMaterial";
-            this.lblCodMaterial.Size = new System.Drawing.Size(91, 13);
+            this.lblCodMaterial.Size = new System.Drawing.Size(120, 17);
             this.lblCodMaterial.TabIndex = 81;
             this.lblCodMaterial.Text = "lblCodMaterial";
             // 
@@ -260,9 +275,10 @@
             // 
             this.lblCodCultivo.AutoSize = true;
             this.lblCodCultivo.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodCultivo.Location = new System.Drawing.Point(229, -1);
+            this.lblCodCultivo.Location = new System.Drawing.Point(305, -1);
+            this.lblCodCultivo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodCultivo.Name = "lblCodCultivo";
-            this.lblCodCultivo.Size = new System.Drawing.Size(85, 13);
+            this.lblCodCultivo.Size = new System.Drawing.Size(112, 17);
             this.lblCodCultivo.TabIndex = 80;
             this.lblCodCultivo.Text = "lblCodCultivo";
             // 
@@ -270,9 +286,10 @@
             // 
             this.lblCodSede.AutoSize = true;
             this.lblCodSede.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodSede.Location = new System.Drawing.Point(135, 0);
+            this.lblCodSede.Location = new System.Drawing.Point(180, 0);
+            this.lblCodSede.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodSede.Name = "lblCodSede";
-            this.lblCodSede.Size = new System.Drawing.Size(67, 13);
+            this.lblCodSede.Size = new System.Drawing.Size(88, 17);
             this.lblCodSede.TabIndex = 79;
             this.lblCodSede.Text = "lblCodSede";
             // 
@@ -280,9 +297,10 @@
             // 
             this.lblCodigoAtrib.AutoSize = true;
             this.lblCodigoAtrib.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoAtrib.Location = new System.Drawing.Point(-1, 15);
+            this.lblCodigoAtrib.Location = new System.Drawing.Point(-1, 18);
+            this.lblCodigoAtrib.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigoAtrib.Name = "lblCodigoAtrib";
-            this.lblCodigoAtrib.Size = new System.Drawing.Size(120, 18);
+            this.lblCodigoAtrib.Size = new System.Drawing.Size(150, 22);
             this.lblCodigoAtrib.TabIndex = 78;
             this.lblCodigoAtrib.Text = "lblCodigoAtrib";
             // 
@@ -291,9 +309,10 @@
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnGuardar.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(801, 4);
+            this.btnGuardar.Location = new System.Drawing.Point(1068, 5);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(115, 42);
+            this.btnGuardar.Size = new System.Drawing.Size(153, 52);
             this.btnGuardar.TabIndex = 77;
             this.btnGuardar.Text = "GRABAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -307,9 +326,10 @@
             this.cboTipo01.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboTipo01.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipo01.FormattingEnabled = true;
-            this.cboTipo01.Location = new System.Drawing.Point(184, 14);
+            this.cboTipo01.Location = new System.Drawing.Point(245, 17);
+            this.cboTipo01.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboTipo01.Name = "cboTipo01";
-            this.cboTipo01.Size = new System.Drawing.Size(167, 23);
+            this.cboTipo01.Size = new System.Drawing.Size(221, 27);
             this.cboTipo01.TabIndex = 75;
             this.cboTipo01.SelectedValueChanged += new System.EventHandler(this.cboTipo01_SelectedValueChanged);
             // 
@@ -318,9 +338,10 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(125, 18);
+            this.label5.Location = new System.Drawing.Point(167, 22);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 15);
+            this.label5.Size = new System.Drawing.Size(81, 20);
             this.label5.TabIndex = 76;
             this.label5.Text = "TIPO 01:";
             // 
@@ -332,9 +353,10 @@
             this.cboMotivo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboMotivo.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMotivo.FormattingEnabled = true;
-            this.cboMotivo.Location = new System.Drawing.Point(631, 14);
+            this.cboMotivo.Location = new System.Drawing.Point(841, 17);
+            this.cboMotivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboMotivo.Name = "cboMotivo";
-            this.cboMotivo.Size = new System.Drawing.Size(167, 23);
+            this.cboMotivo.Size = new System.Drawing.Size(221, 27);
             this.cboMotivo.TabIndex = 73;
             // 
             // label3
@@ -342,9 +364,10 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(577, 18);
+            this.label3.Location = new System.Drawing.Point(769, 22);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 15);
+            this.label3.Size = new System.Drawing.Size(72, 20);
             this.label3.TabIndex = 74;
             this.label3.Text = "MOTIVO:";
             // 
@@ -356,9 +379,10 @@
             this.cboTipo02.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cboTipo02.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipo02.FormattingEnabled = true;
-            this.cboTipo02.Location = new System.Drawing.Point(409, 13);
+            this.cboTipo02.Location = new System.Drawing.Point(545, 16);
+            this.cboTipo02.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboTipo02.Name = "cboTipo02";
-            this.cboTipo02.Size = new System.Drawing.Size(167, 23);
+            this.cboTipo02.Size = new System.Drawing.Size(221, 27);
             this.cboTipo02.TabIndex = 71;
             // 
             // label2
@@ -366,9 +390,10 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(351, 17);
+            this.label2.Location = new System.Drawing.Point(468, 21);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 15);
+            this.label2.Size = new System.Drawing.Size(81, 20);
             this.label2.TabIndex = 72;
             this.label2.Text = "TIPO 02:";
             // 
@@ -376,27 +401,30 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(23, 14);
+            this.label7.Location = new System.Drawing.Point(31, 17);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 22);
+            this.label7.Size = new System.Drawing.Size(0, 28);
             this.label7.TabIndex = 70;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(23, 17);
+            this.label8.Location = new System.Drawing.Point(31, 21);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 22);
+            this.label8.Size = new System.Drawing.Size(0, 28);
             this.label8.TabIndex = 69;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 16);
+            this.label1.Location = new System.Drawing.Point(19, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 22);
+            this.label1.Size = new System.Drawing.Size(0, 28);
             this.label1.TabIndex = 52;
             // 
             // panel1
@@ -406,9 +434,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.dgvTemporal);
-            this.panel1.Location = new System.Drawing.Point(6, 65);
+            this.panel1.Location = new System.Drawing.Point(8, 80);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(922, 521);
+            this.panel1.Size = new System.Drawing.Size(1229, 641);
             this.panel1.TabIndex = 16;
             // 
             // dgvTemporal
@@ -430,6 +459,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvTemporal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvTemporal.ColumnHeadersHeight = 29;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -440,6 +470,7 @@
             this.dgvTemporal.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTemporal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTemporal.Location = new System.Drawing.Point(0, 0);
+            this.dgvTemporal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvTemporal.Name = "dgvTemporal";
             this.dgvTemporal.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -451,21 +482,23 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvTemporal.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTemporal.RowHeadersVisible = false;
+            this.dgvTemporal.RowHeadersWidth = 51;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.dgvTemporal.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTemporal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTemporal.Size = new System.Drawing.Size(920, 519);
+            this.dgvTemporal.Size = new System.Drawing.Size(1227, 639);
             this.dgvTemporal.TabIndex = 6;
             this.dgvTemporal.Click += new System.EventHandler(this.dgvTemporal_Click);
             // 
             // FRM_INSUMOS_ATRIB
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(963, 641);
+            this.ClientSize = new System.Drawing.Size(1284, 789);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FRM_INSUMOS_ATRIB";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "..:: INSUMOS - ATRIBUTOS ::..";

@@ -73,7 +73,8 @@ namespace PROY_COSTOS.INSUMOS
         }
         private void btnExcel_Click(object sender, EventArgs e)
         {
-            met.importarExcel(dgvDatos, "MATE-TIPO-INSUMO");
+            //met.importarExcel(dgvDatos, "MATE-TIPO-INSUMO");
+            met.importarExcel(dgvDatos, "ATRIBUTOS");
             this.lblTotal.Text = Convert.ToString(dgvDatos.RowCount);
         }
 
@@ -110,6 +111,7 @@ namespace PROY_COSTOS.INSUMOS
             try
             {
                 string rpta = "";
+                string llave = lblCodSede.Text + lblCodCultivo.Text + lblCodMaterial.Text + lblCodArea.Text;
                 if (this.lblCodigoAtrib.Text == "0")
                 {
 
@@ -122,7 +124,9 @@ namespace PROY_COSTOS.INSUMOS
                         Convert.ToInt32(lblCodArea.Text.Trim()), 
                         Convert.ToInt32(this.cboTipo01.SelectedValue.ToString()), 
                         Convert.ToInt32(this.cboTipo02.SelectedValue.ToString()), 
-                        Convert.ToInt32(this.cboMotivo.SelectedValue.ToString()));
+                        Convert.ToInt32(this.cboMotivo.SelectedValue.ToString()),
+                        llave);
+                        
                     }
                     else
                     {
@@ -139,7 +143,8 @@ namespace PROY_COSTOS.INSUMOS
                         Convert.ToInt32(lblCodArea.Text.Trim()),
                         Convert.ToInt32(this.cboTipo01.SelectedValue.ToString()),
                         Convert.ToInt32(this.cboTipo02.SelectedValue.ToString()),
-                        Convert.ToInt32(this.cboMotivo.SelectedValue.ToString()));
+                        Convert.ToInt32(this.cboMotivo.SelectedValue.ToString()),
+                        llave);
                 }
                 if (rpta.Equals("OK"))
                 {
@@ -171,6 +176,7 @@ namespace PROY_COSTOS.INSUMOS
 
         private void btnCargar_Click(object sender, EventArgs e)
         {
+            int success_registros = 0;
             try
             {
                 if (dgvDatos.RowCount < 1)
@@ -182,14 +188,15 @@ namespace PROY_COSTOS.INSUMOS
                     progressBar.Maximum = Convert.ToInt32(dgvDatos.RowCount);
                     foreach (DataGridViewRow row in dgvDatos.Rows)
                     {
-                        oN.ope_MaterialAtributos(1,1,
+                            oN.ope_MaterialAtributos(1,1,
                             Convert.ToInt32(row.Cells["COD_SEDE"].Value.ToString().Trim()),
                             Convert.ToInt32(row.Cells["COD_CULTIVO"].Value.ToString()),
                             Convert.ToInt32(row.Cells["COD_MATERIAL"].Value.ToString()),
                             Convert.ToInt32(row.Cells["COD_CUENTA"].Value.ToString()),
                             Convert.ToInt32(row.Cells["COD_TIP01"].Value.ToString()),
                             Convert.ToInt32(row.Cells["COD_TIP02"].Value.ToString()),
-                            Convert.ToInt32(row.Cells["COD_MOTIVO"].Value.ToString())
+                            Convert.ToInt32(row.Cells["COD_MOTIVO"].Value.ToString()),
+                            row.Cells["LLAVE_ATRIB"].Value.ToString()
                             );
                         progressBar.Value = progressBar.Value + 1;
                     }
@@ -199,9 +206,6 @@ namespace PROY_COSTOS.INSUMOS
                     dgvDatos.Columns.Clear();
                     progressBar.Value = 0;
                 }
-
-
-
             }
             catch (Exception)
             {

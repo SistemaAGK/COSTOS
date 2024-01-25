@@ -12,6 +12,22 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\usuario\Documents\PROYECTO\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -31,6 +47,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>AFC878114637C4DF800D23BDAE8CC4E14C23FD58</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PROY_COSTOS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ClosedXML, Version=0.102.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
@@ -182,6 +210,12 @@
     <Compile Include="FRM_PRINCIPAL.Designer.cs">
       <DependentUpon>FRM_PRINCIPAL.cs</DependentUpon>
     </Compile>
+    <Compile Include="GENERALES\CAMPAÑAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERALES\CAMPAÑAS.Designer.cs">
+      <DependentUpon>CAMPAÑAS.cs</DependentUpon>
+    </Compile>
     <Compile Include="GENERALES\FRM_CAMPANIA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +257,12 @@
     </Compile>
     <Compile Include="GENERALES\FRM_VER_PPTO.Designer.cs">
       <DependentUpon>FRM_VER_PPTO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GENERALES\MTTO_CAMPAÑA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERALES\MTTO_CAMPAÑA.Designer.cs">
+      <DependentUpon>MTTO_CAMPAÑA.cs</DependentUpon>
     </Compile>
     <Compile Include="INSUMOS\FRM_CONSUL_PPTO_REAL_GENE.cs">
       <SubType>Form</SubType>
@@ -308,6 +348,12 @@
     <Compile Include="INSUMOS\FRM_TIPO.Designer.cs">
       <DependentUpon>FRM_TIPO.cs</DependentUpon>
     </Compile>
+    <Compile Include="MANO DE OBRA\Maestros\FRM_MO_LABORES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MANO DE OBRA\Maestros\FRM_MO_LABORES.Designer.cs">
+      <DependentUpon>FRM_MO_LABORES.cs</DependentUpon>
+    </Compile>
     <Compile Include="MANO DE OBRA\FRM_MO_CONSULTA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +372,12 @@
     <Compile Include="MANO DE OBRA\FRM_MO_REAL.Designer.cs">
       <DependentUpon>FRM_MO_REAL.cs</DependentUpon>
     </Compile>
+    <Compile Include="MANO DE OBRA\Maestros\FRM_MO_TARIFAS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MANO DE OBRA\Maestros\FRM_MO_TARIFAS.Designer.cs">
+      <DependentUpon>FRM_MO_TARIFAS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Metodos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -343,6 +395,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRM_PRINCIPAL.resx">
       <DependentUpon>FRM_PRINCIPAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERALES\CAMPAÑAS.resx">
+      <DependentUpon>CAMPAÑAS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GENERALES\FRM_CAMPANIA.resx">
       <DependentUpon>FRM_CAMPANIA.cs</DependentUpon>
@@ -364,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GENERALES\FRM_VER_PPTO.resx">
       <DependentUpon>FRM_VER_PPTO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERALES\MTTO_CAMPAÑA.resx">
+      <DependentUpon>MTTO_CAMPAÑA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="INSUMOS\FRM_CONSUL_PPTO_REAL_GENE.resx">
       <DependentUpon>FRM_CONSUL_PPTO_REAL_GENE.cs</DependentUpon>
@@ -407,6 +465,9 @@
     <EmbeddedResource Include="INSUMOS\FRM_TIPO.resx">
       <DependentUpon>FRM_TIPO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MANO DE OBRA\Maestros\FRM_MO_LABORES.resx">
+      <DependentUpon>FRM_MO_LABORES.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MANO DE OBRA\FRM_MO_CONSULTA.resx">
       <DependentUpon>FRM_MO_CONSULTA.cs</DependentUpon>
     </EmbeddedResource>
@@ -415,6 +476,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MANO DE OBRA\FRM_MO_REAL.resx">
       <DependentUpon>FRM_MO_REAL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MANO DE OBRA\Maestros\FRM_MO_TARIFAS.resx">
+      <DependentUpon>FRM_MO_TARIFAS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -435,6 +499,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="PROY_COSTOS_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -447,6 +512,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AGK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

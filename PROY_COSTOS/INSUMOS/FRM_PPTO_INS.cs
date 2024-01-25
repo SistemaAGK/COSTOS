@@ -81,11 +81,11 @@ namespace PROY_COSTOS
                     dgvDatos.Columns.Clear();
                     //progressBar.Value = 0;
 
-                    rpta = oN.ope_Reemplazo_DATA_PPTO();
-                    if (rpta.Equals("OK"))
-                    {
-                        rpta = oN.insert_InsumoPPTO(1);
-                    }
+                    //rpta = oN.ope_Reemplazo_DATA_PPTO();
+                    //if (rpta.Equals("OK"))
+                    //{
+                    rpta = oN.insert_InsumoPPTO(1);
+                    //}
                     if (rpta.Equals("OK"))
                     {
                         lst_TemporalPPTO();

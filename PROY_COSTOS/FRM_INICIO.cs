@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Configuration;
+
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
@@ -89,38 +91,16 @@ namespace PROY_COSTOS
         {
             Application.Exit();
         }
-
         private void btnminimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
-
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            dtinicio = oN.bInicio(txtuser.Text, txtpass.Text);
-
-            if (dtinicio.Rows.Count > 0)
-            {
-                ////txtuser.Text = "";
-                ////txtpass.Text = "";
-
-                FRM_PRINCIPAL form = new FRM_PRINCIPAL();
-
-                form.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Usuario no Valido");
-
-            }
+            Validar_ingreso();
         }
 
 
@@ -132,6 +112,34 @@ namespace PROY_COSTOS
         private void btncerrar_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txtpass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                Validar_ingreso();
+            }
+        }
+
+        private void Validar_ingreso()
+        {
+            dtinicio = oN.bInicio(txtuser.Text, txtpass.Text);
+
+            if (dtinicio.Rows.Count > 0)
+            {
+                ConfigurationManager.AppSettings["_Usuario"] = txtuser.Text;
+
+                FRM_PRINCIPAL form = new FRM_PRINCIPAL();
+
+                form.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuario no Valido");
+
+            }
         }
     }
 }

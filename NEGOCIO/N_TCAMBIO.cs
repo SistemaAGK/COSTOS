@@ -23,5 +23,11 @@ namespace NEGOCIO
         {
             return oMD.lstTipoCambioDiario();
         }
+        /*TIPO DE CAMBIO MENSUAL - PROMEDIANDO TC DIARIO :: INICIO */
+        public string insertTipoCambio_Mensual(int anio, int periodo, decimal cambio, string usuario)
+        {
+            return oMD.insertTipoCambio_Mensual(anio, periodo, cambio, usuario);
+        }
+        /*TIPO DE CAMBIO MENSUAL - PROMEDIANDO TC DIARIO :: FIN */
     }
 }

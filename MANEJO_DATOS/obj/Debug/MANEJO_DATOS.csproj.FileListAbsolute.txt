@@ -97,3 +97,12 @@ C:\Users\usuario\Downloads\PROY_COSTOS\MANEJO_DATOS\obj\Debug\MANEJO_DATOS.cspro
 C:\Users\usuario\Downloads\PROY_COSTOS\MANEJO_DATOS\obj\Debug\MANEJO_DATOS.csproj.CopyComplete
 C:\Users\usuario\Downloads\PROY_COSTOS\MANEJO_DATOS\obj\Debug\MANEJO_DATOS.dll
 C:\Users\usuario\Downloads\PROY_COSTOS\MANEJO_DATOS\obj\Debug\MANEJO_DATOS.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\MANEJO_DATOS\bin\Debug\MANEJO_DATOS.dll
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\MANEJO_DATOS\bin\Debug\MANEJO_DATOS.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\MANEJO_DATOS\bin\Debug\CONEXION.dll
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\MANEJO_DATOS\bin\Debug\CONEXION.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\MANEJO_DATOS\obj\Debug\MANEJO_DATOS.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\MANEJO_DATOS\obj\Debug\MANEJO_DATOS.csproj.CopyComplete
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\MANEJO_DATOS\obj\Debug\MANEJO_DATOS.dll
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\MANEJO_DATOS\obj\Debug\MANEJO_DATOS.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\MANEJO_DATOS\obj\Debug\MANEJO_DATOS.csproj.AssemblyReference.cache

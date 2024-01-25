@@ -1,18 +1,16 @@
 ﻿using NEGOCIO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using System.Configuration;
 
 namespace PROY_COSTOS.GENERALES
 {
     public partial class FRM_TCAMBIO_DIARIO : Form
     {
+        decimal sum_total_tc;
+        decimal prom_mes;
         Metodos met = new Metodos();
         DataView oDv = new DataView();
         //Metodos met = new Metodos();
@@ -55,8 +53,18 @@ namespace PROY_COSTOS.GENERALES
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
             try
             {
+                dgvDatosExcel.Refresh();
+                int count_day = 0;
+                int mes;
+                int anio;
+                
+                DateTime fecha = Convert.ToDateTime(this.dgvDatosExcel.CurrentRow.Cells["FECHA"].Value);
+                mes = Convert.ToInt32(fecha.ToString("MM"));
+                anio = Convert.ToInt32(fecha.ToString("yyyy"));
+                
                 if (dgvDatosExcel.RowCount < 1)
                 {
                     met.MensajeError("NO EXISTEN DATOS PARA REALIZAR LA CARGA");
@@ -64,6 +72,7 @@ namespace PROY_COSTOS.GENERALES
                 else
                 {
                     string rpta = "";
+                    string rpta_tcm = "";
                     if (dgvDatosExcel.RowCount > 0)
                     {
                         foreach (DataGridViewRow row in dgvDatosExcel.Rows)
@@ -71,9 +80,18 @@ namespace PROY_COSTOS.GENERALES
                             rpta = oN.insertTipoCambioDiario(
                                         Convert.ToDateTime(row.Cells["FECHA"].Value.ToString()),
                                         Convert.ToDecimal(row.Cells["TCAMBIO"].Value.ToString())
-                                    
+
                             );
+                            count_day++;
+                            sum_total_tc += Convert.ToDecimal(row.Cells["TCAMBIO"].Value.ToString());
                         }
+                        prom_mes = Math.Round((sum_total_tc / count_day),3);
+                        rpta_tcm = oN.insertTipoCambio_Mensual(
+                                    anio,
+                                    mes,
+                                    prom_mes,
+                                    ConfigurationManager.AppSettings["_Usuario"].ToString()
+                        );
                     }
                     else
                     {
@@ -87,9 +105,6 @@ namespace PROY_COSTOS.GENERALES
                         dgvDatosExcel.Columns.Clear();
                     }
                 }
-
-
-                
             }
             catch (Exception ex)
             {

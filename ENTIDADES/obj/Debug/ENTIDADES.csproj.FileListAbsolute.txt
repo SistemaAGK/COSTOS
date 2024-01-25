@@ -15,3 +15,15 @@ C:\APLICATIVOS\P_COSTOS_CCAUSO\PROY_COSTOS\ENTIDADES\bin\Debug\ENTIDADES.pdb
 C:\APLICATIVOS\P_COSTOS_CCAUSO\PROY_COSTOS\ENTIDADES\obj\Debug\ENTIDADES.csproj.CoreCompileInputs.cache
 C:\APLICATIVOS\P_COSTOS_CCAUSO\PROY_COSTOS\ENTIDADES\obj\Debug\ENTIDADES.dll
 C:\APLICATIVOS\P_COSTOS_CCAUSO\PROY_COSTOS\ENTIDADES\obj\Debug\ENTIDADES.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS\ENTIDADES\bin\Debug\ENTIDADES.dll
+C:\Users\usuario\Downloads\PROY_COSTOS\ENTIDADES\bin\Debug\ENTIDADES.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS\ENTIDADES\obj\Debug\ENTIDADES.csproj.AssemblyReference.cache
+C:\Users\usuario\Downloads\PROY_COSTOS\ENTIDADES\obj\Debug\ENTIDADES.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Downloads\PROY_COSTOS\ENTIDADES\obj\Debug\ENTIDADES.dll
+C:\Users\usuario\Downloads\PROY_COSTOS\ENTIDADES\obj\Debug\ENTIDADES.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\ENTIDADES\bin\Debug\ENTIDADES.dll
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\ENTIDADES\bin\Debug\ENTIDADES.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\ENTIDADES\obj\Debug\ENTIDADES.csproj.AssemblyReference.cache
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\ENTIDADES\obj\Debug\ENTIDADES.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\ENTIDADES\obj\Debug\ENTIDADES.dll
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\ENTIDADES\obj\Debug\ENTIDADES.pdb

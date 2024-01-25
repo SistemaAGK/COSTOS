@@ -58,22 +58,34 @@ namespace MANEJO_DATOS
             List<SqlParameter> listP = new List<SqlParameter>();
             return oConn.filtrarRegistros("SP_INDICADOR_LST", listP);
         }
-        public DataTable lstCampania(int opc)
+        public DataTable lstCampania(int opc, string campania)
+        {
+            List<SqlParameter> listP = new List<SqlParameter>();
+            SqlParameter pOPC = new SqlParameter("@opc", opc);
+            SqlParameter pVal = new SqlParameter("@campania", campania);
+
+            listP.Add(pOPC);
+            listP.Add(pVal);
+            return oConn.filtrarRegistros("SP_GE_CAMPANIA_LST", listP);
+        }
+        public DataTable lstMantTipoFam(int opc)
         {
             List<SqlParameter> listP = new List<SqlParameter>();
             SqlParameter pOPC = new SqlParameter("@opc", opc);
             listP.Add(pOPC);
-            return oConn.filtrarRegistros("SP_GE_CAMPANIA_LST", listP);
+            return oConn.filtrarRegistros("SP_GE_TIPOFAM_LST", listP);
         }
         public DataTable lstMedida()
         {
             List<SqlParameter> listP = new List<SqlParameter>();
             return oConn.filtrarRegistros("SP_GE_MEDIDA_LST", listP);
         }
-        public string insertCampania(string campania, string fec_inicio,string fec_fin, int usuario)
+        public string mtto_campania(string campania, string fec_inicio,string fec_fin, string usuario, int estado, string accion)
         {
             try
             {
+                DateTime finicio = Convert.ToDateTime(fec_inicio);
+                DateTime ffin = Convert.ToDateTime(fec_fin);
                 using (SqlConnection oconexion = oConn.obtenerConexion())
                 {
                     using (SqlCommand ocmd = new SqlCommand())
@@ -82,9 +94,11 @@ namespace MANEJO_DATOS
                         ocmd.CommandType = CommandType.StoredProcedure;
                         ocmd.CommandText = "SP_GE_CAMPANIA_INS";
                         ocmd.Parameters.Add("@campania", SqlDbType.VarChar).Value = campania;
-                        ocmd.Parameters.Add("@fec_inicio", SqlDbType.VarChar, 10).Value = fec_inicio;
-                        ocmd.Parameters.Add("@fec_fin", SqlDbType.VarChar, 10).Value = fec_fin;
-                        ocmd.Parameters.Add("@usuario", SqlDbType.Int).Value = usuario;
+                        ocmd.Parameters.Add("@fec_inicio", SqlDbType.DateTime).Value = fec_inicio;
+                        ocmd.Parameters.Add("@fec_fin", SqlDbType.DateTime).Value = fec_fin;
+                        ocmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario;
+                        ocmd.Parameters.Add("@estado", SqlDbType.Int).Value = estado;
+                        ocmd.Parameters.Add("@accion", SqlDbType.VarChar).Value = accion;
                         ocmd.ExecuteNonQuery();
                         oconexion.Close();
                     }

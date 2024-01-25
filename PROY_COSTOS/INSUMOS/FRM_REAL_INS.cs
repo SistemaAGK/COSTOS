@@ -1,4 +1,5 @@
 ﻿using NEGOCIO;
+using PROY_COSTOS.GENERALES;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +39,8 @@ namespace PROY_COSTOS.INSUMOS
             lblverPPTO02.Text = Metodos.variablesGlobales.ver_ppto.ToString();
             lblVerPLAN01.Text = Metodos.variablesGlobales.ver_plan.ToString();
             lblVerPLAN02.Text = Metodos.variablesGlobales.ver_plan.ToString();
+
+            lblCampañaReal.Text = met.camp_Actual();
             cboIndicativo.SelectedIndex = -1;
         }
         private void lst_TemporalREAL()
@@ -85,45 +88,52 @@ namespace PROY_COSTOS.INSUMOS
                 }
                 else
                 {
-                    this.lblEstado.Text = "Procesando Datos";
-                    string rpta = "";
-                    foreach (DataGridViewRow row in dgvDatos.Rows)
+                    DialogResult dialogResult = MessageBox.Show("¿Seguro de realizar la carga real en la campaña " + lblCampañaReal.Text + " ?", "Sistema de Costos", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
                     {
-                        oN.insert_TempREAL(
-                                    row.Cells["CECO"].Value.ToString(),
-                                    Convert.ToInt32(row.Cells["CUENTA"].Value.ToString()),
-                                    Convert.ToInt32(row.Cells["COD_MATERIAL"].Value.ToString()),
-                                    row.Cells["MATERIAL"].Value.ToString(),
-                                    Convert.ToDateTime(row.Cells["FECHA"].Value.ToString()),
-                                    Convert.ToInt32(row.Cells["ANIO"].Value.ToString()),
-                                    Convert.ToInt32(row.Cells["PERIODO"].Value.ToString()),
-                                    Convert.ToDecimal(row.Cells["CANTIDAD"].Value.ToString()),
-                                    Convert.ToDecimal(row.Cells["COSTO_SOLES"].Value.ToString()),
-                                    row.Cells["USUARIO_ALM"].Value.ToString(),
-                                    row.Cells["NUM_DOC_REF"].Value.ToString(),
-                                    row.Cells["USU_SOLIC"].Value.ToString(),
-                                    row.Cells["NUM_DOCUMENTO"].Value.ToString(),
-                                    row.Cells["CLASE"].Value.ToString(),
-                                    Convert.ToInt32(cboIndicativo.SelectedValue.ToString())
-                                    );
-                    }
-                    dgvDatos.DataSource = null;
-                    dgvDatos.Rows.Clear();
-                    dgvDatos.Columns.Clear();
-                    rpta = oN.opeReemplazo_DATA_REAL();
+                        this.lblEstado.Text = "Procesando Datos";
+                        string rpta = "";
+                        foreach (DataGridViewRow row in dgvDatos.Rows)
+                        {
+                            oN.insert_TempREAL(
+                                        row.Cells["CECO"].Value.ToString(),
+                                        Convert.ToInt32(row.Cells["CUENTA"].Value.ToString()),
+                                        Convert.ToInt32(row.Cells["COD_MATERIAL"].Value.ToString()),
+                                        row.Cells["MATERIAL"].Value.ToString(),
+                                        Convert.ToDateTime(row.Cells["FECHA"].Value.ToString()),
+                                        Convert.ToInt32(row.Cells["ANIO"].Value.ToString()),
+                                        Convert.ToInt32(row.Cells["PERIODO"].Value.ToString()),
+                                        Convert.ToDecimal(row.Cells["CANTIDAD"].Value.ToString()),
+                                        Convert.ToDecimal(row.Cells["COSTO_SOLES"].Value.ToString()),
+                                        row.Cells["USUARIO_ALM"].Value.ToString(),
+                                        row.Cells["NUM_DOC_REF"].Value.ToString(),
+                                        row.Cells["USU_SOLIC"].Value.ToString(),
+                                        row.Cells["NUM_DOCUMENTO"].Value.ToString(),
+                                        row.Cells["CLASE"].Value.ToString(),
+                                        Convert.ToInt32(cboIndicativo.SelectedValue.ToString())
+                                        );
+                        }
+                        dgvDatos.DataSource = null;
+                        dgvDatos.Rows.Clear();
+                        dgvDatos.Columns.Clear();
+                        //rpta = oN.opeReemplazo_DATA_REAL();
 
-                    if (rpta.Equals("OK"))
-                    {
-                        rpta = oN.insert_REAL();
-                    }
-                   
-                    if (rpta.Equals("OK"))
-                    {
-                        
-                        lst_TemporalREAL();
-                        met.MensajeOK("DATOS REGISTRADOS");
-                        this.lblEstado.Text = "";
-                        cboIndicativo.SelectedIndex = -1;
+                        //if (rpta.Equals("OK"))
+                        //{
+                        rpta = oN.insert_REAL(1);
+                        //}
+
+                        if (rpta.Equals("OK"))
+                        {
+
+                            lst_TemporalREAL();
+                            met.MensajeOK("DATOS REGISTRADOS");
+
+
+
+                            this.lblEstado.Text = "";
+                            cboIndicativo.SelectedIndex = -1;
+                        }
                     }
                 }
             }
@@ -144,7 +154,7 @@ namespace PROY_COSTOS.INSUMOS
                 else
                 {
                     string rpta = "";
-                    rpta = oN.insert_REAL();
+                    rpta = oN.insert_REAL(1);
                     if (rpta.Equals("OK"))
                     {
                         met.MensajeOK("DATOS REGISTRADOS");
@@ -172,7 +182,7 @@ namespace PROY_COSTOS.INSUMOS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            oN.insert_REAL();
+            oN.insert_REAL(1);
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

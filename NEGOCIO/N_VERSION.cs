@@ -11,9 +11,9 @@ namespace NEGOCIO
     public class N_VERSION
     {
         MD_VERSION oMD = new MD_VERSION();
-        public string crear_Version(int opc, int indicador,string descripcion,  int usuario)
+        public string crear_Version(int opc, int indicador,string descripcion,  string usuario, int estado, string accion, int codigo)
         {
-            return oMD.crearVersion(opc, indicador, descripcion, usuario);
+            return oMD.crearVersion(opc, indicador, descripcion, usuario,estado,accion,codigo);
         }
         public DataTable lst_VersionPPTO()
         {

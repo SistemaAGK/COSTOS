@@ -44,21 +44,26 @@ namespace NEGOCIO
         {
             return oMD.lstIndicador();
         }
-        public DataTable lstCampania(int opc)
+        public DataTable lstCampania(int opc, string campania)
         {
-            return oMD.lstCampania(opc);
+            return oMD.lstCampania(opc, campania);
         }
         public DataTable lst_Medida()
         {
             return oMD.lstMedida();
         }
-        public string insert_Campania(string campania, string fec_inicio, string fec_fin, int usuario)
+        public string mtto_campania(string campania, string fec_inicio, string fec_fin, string usuario, int estado, string accion)
         {
-            return oMD.insertCampania(campania, fec_inicio, fec_fin, usuario);
+            return oMD.mtto_campania(campania, fec_inicio, fec_fin, usuario, estado, accion);
         }
         public DataTable lst_VersionesG(int opc)
         {
             return oMD.lstVersionesG(opc);
+        }
+        /* 2410 - OS */
+        public DataTable lstManTipFam(int opc)
+        {
+            return oMD.lstMantTipoFam(opc);
         }
     }
 }

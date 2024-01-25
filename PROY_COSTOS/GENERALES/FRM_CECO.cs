@@ -226,9 +226,6 @@ namespace PROY_COSTOS
                     if (this.isNuevo)
                     {
                         rpta = oN.ope_CECO(1,
-
-
-
                                             this.txtCECO.Text.Trim(),
                                             Convert.ToInt32(this.cboSede.SelectedValue.ToString()),
                                             Convert.ToInt32(this.cboFundo.SelectedValue.ToString()),
@@ -239,8 +236,8 @@ namespace PROY_COSTOS
                                             Convert.ToInt32(this.cboCultivo.SelectedValue.ToString()),
                                             Convert.ToDecimal(this.txtSuperficie.Text),
                                             1 /*ENVIADO DE VARIABLE GLOBAL*/,
-                                            Convert.ToInt32(this.lblFlag.Text.ToString())
-                                            );
+                                            0
+                                            ) ;
                     }
                     else
                     {
@@ -324,7 +321,7 @@ namespace PROY_COSTOS
                             Convert.ToInt32(row.Cells["cod_cultivo"].Value.ToString()),
                             Convert.ToDecimal(row.Cells["superficie"].Value.ToString()),
                             1,
-                            Convert.ToInt32(row.Cells["flag_pep"].Value.ToString())
+                            0 //Convert.ToInt32(row.Cells["flag_pep"].Value.ToString())
                                     );
                         progressBar.Value = progressBar.Value + 1; 
                     }ListarDatos(1);

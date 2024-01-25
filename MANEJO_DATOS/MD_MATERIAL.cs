@@ -102,7 +102,7 @@ namespace MANEJO_DATOS
                     {
                         ocmd.Connection = oconexion;
                         ocmd.CommandType = CommandType.StoredProcedure;
-                        ocmd.CommandText = "SP_GE_MATERIAL_TIPO_INSERT";
+                        ocmd.CommandText = "SP_GE_MATERIAL_TIPO2_INSERT";
                         ocmd.Parameters.Add("@cod_tmaterial", SqlDbType.Int).Value = cod_tipo1;
                         ocmd.Parameters.Add("@tmaterial_nombre2", SqlDbType.VarChar, 30).Value = tipo2;
                         ocmd.ExecuteNonQuery();
@@ -171,7 +171,7 @@ namespace MANEJO_DATOS
             return oConn.filtrarRegistros("SP_GE_MATERIAL_TIPO02_LST", listP);
         }
 
-        public string opeMaterialAtributos(int opc, int cod_atrib, int cod_sede, int cod_cultivo, int cod_material, int cod_area, int cod_tmaterial, int cod_tmaterial2, int cod_motivo)
+        public string opeMaterialAtributos(int opc, int cod_atrib, int cod_sede, int cod_cultivo, int cod_material, int cod_area, int cod_tmaterial, int cod_tmaterial2, int cod_motivo,string llave)
         {
             try
             {
@@ -191,6 +191,66 @@ namespace MANEJO_DATOS
                         ocmd.Parameters.Add("@cod_tmaterial", SqlDbType.Int).Value = cod_tmaterial;
                         ocmd.Parameters.Add("@cod_tmaterial2", SqlDbType.Int).Value = cod_tmaterial2;
                         ocmd.Parameters.Add("@cod_motivo", SqlDbType.Int).Value = cod_motivo;
+                        ocmd.Parameters.Add("@llave_atrib", SqlDbType.VarChar).Value = llave;
+                        ocmd.ExecuteNonQuery();
+                        oconexion.Close();
+                    }
+                }
+                return "OK";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+        public string ope_Labores(int opc, int cod_labor, int cod_grupo, int cod_gruporat, int cod_efectivo, string descripcion_labor)
+        {
+            try
+            {
+                using (SqlConnection oconexion = oConn.obtenerConexion())
+                {
+                    using (SqlCommand ocmd = new SqlCommand())
+                    {
+                        ocmd.Connection = oconexion;
+                        ocmd.CommandType = CommandType.StoredProcedure;
+                        ocmd.CommandText = "SP_GE_LABORES_INSERT";
+                        ocmd.Parameters.Add("@opc", SqlDbType.Int).Value = opc;
+                        ocmd.Parameters.Add("@cod_labor", SqlDbType.Int).Value = cod_labor;
+                        ocmd.Parameters.Add("@cod_grupo", SqlDbType.Int).Value = cod_grupo;
+                        ocmd.Parameters.Add("@cod_gruporat", SqlDbType.Int).Value = cod_gruporat;
+                        ocmd.Parameters.Add("@cod_efectivo", SqlDbType.Int).Value = cod_efectivo;
+                        ocmd.Parameters.Add("@labor", SqlDbType.VarChar).Value = descripcion_labor;
+                        ocmd.ExecuteNonQuery();
+                        oconexion.Close();
+                    }
+                }
+                return "OK";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+        public string ope_Tarifas(int opc, int cod_ver, int cod_sede, int cod_cultivo, int cod_destino, int cod_labor, int cod_anio, int periodo, decimal tarifa)
+        {
+            try
+            {
+                using (SqlConnection oconexion = oConn.obtenerConexion())
+                {
+                    using (SqlCommand ocmd = new SqlCommand())
+                    {
+                        ocmd.Connection = oconexion;
+                        ocmd.CommandType = CommandType.StoredProcedure;
+                        ocmd.CommandText = "SP_GE_TARIFAS_INSERT";
+                        ocmd.Parameters.Add("@opc", SqlDbType.Int).Value = opc;
+                        ocmd.Parameters.Add("@cod_ver", SqlDbType.Int).Value = cod_ver;
+                        ocmd.Parameters.Add("@cod_sede", SqlDbType.Int).Value = cod_sede;
+                        ocmd.Parameters.Add("@cod_cultivo", SqlDbType.Int).Value = cod_cultivo;
+                        ocmd.Parameters.Add("@cod_destino", SqlDbType.Int).Value = cod_destino;
+                        ocmd.Parameters.Add("@cod_labor", SqlDbType.Int).Value = cod_labor;
+                        ocmd.Parameters.Add("@anio", SqlDbType.Int).Value = cod_anio;
+                        ocmd.Parameters.Add("@periodo", SqlDbType.Int).Value = periodo;
+                        ocmd.Parameters.Add("@tarifa", SqlDbType.Decimal).Value = tarifa;
                         ocmd.ExecuteNonQuery();
                         oconexion.Close();
                     }

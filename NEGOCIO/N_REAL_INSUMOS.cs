@@ -26,9 +26,9 @@ namespace NEGOCIO
         {
             return oMD.lstTemporalREAL();
         }
-        public string insert_REAL()
+        public string insert_REAL(int log)
         {
-            return oMD.insertREAL();
+            return oMD.insertREAL(log);
         }
         public DataTable lst_REAL(int opc, int sede, int fundo, int cultivo)
         {

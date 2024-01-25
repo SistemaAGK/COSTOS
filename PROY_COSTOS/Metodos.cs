@@ -29,6 +29,7 @@ namespace PROY_COSTOS
             public static int ver_plan;
             public static decimal tcambio_diario;
             public static decimal tcambio_mensual;
+
         }
 
         public void MensajeOK(string mensaje)
@@ -91,7 +92,7 @@ namespace PROY_COSTOS
         }
         public string camp_Actual()
         {
-            DataTable dt = oMa.lstCampania(1);
+            DataTable dt = oMa.lstCampania(1,"");
             if (dt.Rows.Count != 0)
             {
                 variablesGlobales.cod_campania = Convert.ToInt32(dt.Rows[0][0]);

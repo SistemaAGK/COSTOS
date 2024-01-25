@@ -27,3 +27,9 @@ C:\Users\usuario\Downloads\PROY_COSTOS\CONEXION\obj\Debug\CONEXION.csproj.Assemb
 C:\Users\usuario\Downloads\PROY_COSTOS\CONEXION\obj\Debug\CONEXION.csproj.CoreCompileInputs.cache
 C:\Users\usuario\Downloads\PROY_COSTOS\CONEXION\obj\Debug\CONEXION.dll
 C:\Users\usuario\Downloads\PROY_COSTOS\CONEXION\obj\Debug\CONEXION.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\CONEXION\bin\Debug\CONEXION.dll
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\CONEXION\bin\Debug\CONEXION.pdb
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\CONEXION\obj\Debug\CONEXION.csproj.AssemblyReference.cache
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\CONEXION\obj\Debug\CONEXION.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\CONEXION\obj\Debug\CONEXION.dll
+C:\Users\usuario\Downloads\PROY_COSTOS - copia\CONEXION\obj\Debug\CONEXION.pdb

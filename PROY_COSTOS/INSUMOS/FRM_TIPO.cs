@@ -31,7 +31,7 @@ namespace PROY_COSTOS.INSUMOS
             InitializeComponent();
             this.txtTipo.Text = string.Empty;
             ListarDatos("");
-            this.dgbDatos.Columns[0].Visible = false;
+          //  this.dgbDatos.Columns[0].Visible = false;
         }
         private void ListarDatos(string tipo)
         {

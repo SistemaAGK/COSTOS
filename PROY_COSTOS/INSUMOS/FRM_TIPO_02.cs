@@ -33,7 +33,7 @@ namespace PROY_COSTOS.INSUMOS
             this.txtDescripcion.Text = string.Empty;
             ListarDatos();
             this.dgbDatos.Columns[0].Visible = false;
-            this.dgbDatos.Columns[1].Visible = false;
+           // this.dgbDatos.Columns[1].Visible = false;
             //this.dgbDatos.Columns[2].Visible = false;
 
         }

@@ -27,7 +27,6 @@ namespace CONEXION
                     da.Fill(dt);
                     oconn.Close();
                     return dt;
-                    //PRUEBA GITHUB
                 }
             }
         }
