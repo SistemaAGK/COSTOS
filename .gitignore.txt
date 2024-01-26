@@ -1,0 +1,3 @@
+
+.vs/
+PROY_COSTOS/bin/
