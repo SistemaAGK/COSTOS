@@ -23,6 +23,11 @@ namespace MANEJO_DATOS
             List<SqlParameter> listP = new List<SqlParameter>();
             return oConn.filtrarRegistros("SP_GE_SEDE_LST_ALL", listP);
         }
+        public DataTable lstCultivos()
+        {
+            List<SqlParameter> listP = new List<SqlParameter>();
+            return oConn.filtrarRegistros("SP_GE_CULTIVO_LST_ALL", listP);
+        }
         public DataTable lstPeriodos(int tipo_lista)
         {
             DataTable dt = new DataTable();
@@ -180,7 +185,7 @@ namespace MANEJO_DATOS
                 return dt;
             }
         }
-        public string opeUpdateRealMO(int campaña, int mes, int sede)
+        public string opeUpdateRealMO(int campaña, int mes, int sede, int cultivo)
         {
             try
             {
@@ -195,6 +200,7 @@ namespace MANEJO_DATOS
                         ocmd.Parameters.Add("@cod_campania", SqlDbType.Int).Value = campaña;
                         ocmd.Parameters.Add("@nume_mes", SqlDbType.Int).Value = mes;
                         ocmd.Parameters.Add("@cod_sede", SqlDbType.Int).Value = sede;
+                        ocmd.Parameters.Add("@cod_cultivo", SqlDbType.Int).Value = cultivo;
                         ocmd.ExecuteNonQuery();
                         oconexion.Close();
                     }
@@ -241,5 +247,10 @@ namespace MANEJO_DATOS
             List<SqlParameter> listP = new List<SqlParameter>();
             return oConn.filtrarRegistros("SP_GE_SEDE_LST", listP);
         }
+        //public DataTable lstCultivosImportar()
+        //{
+        //    List<SqlParameter> listP = new List<SqlParameter>();
+        //    return oConn.filtrarRegistros("SP_GE_CULTIVO_LST", listP);
+        //}
     }
 }
