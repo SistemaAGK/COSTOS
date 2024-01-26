@@ -130,3 +130,14 @@ C:\Users\usuario\Downloads\PROY_COSTOS - copia\NEGOCIO\obj\Debug\NEGOCIO.csproj.
 C:\Users\usuario\Downloads\PROY_COSTOS - copia\NEGOCIO\obj\Debug\NEGOCIO.csproj.CopyComplete
 C:\Users\usuario\Downloads\PROY_COSTOS - copia\NEGOCIO\obj\Debug\NEGOCIO.dll
 C:\Users\usuario\Downloads\PROY_COSTOS - copia\NEGOCIO\obj\Debug\NEGOCIO.pdb
+D:\COSTOS\NEGOCIO\bin\Debug\NEGOCIO.dll
+D:\COSTOS\NEGOCIO\bin\Debug\NEGOCIO.pdb
+D:\COSTOS\NEGOCIO\bin\Debug\MANEJO_DATOS.dll
+D:\COSTOS\NEGOCIO\bin\Debug\CONEXION.dll
+D:\COSTOS\NEGOCIO\bin\Debug\MANEJO_DATOS.pdb
+D:\COSTOS\NEGOCIO\bin\Debug\CONEXION.pdb
+D:\COSTOS\NEGOCIO\obj\Debug\NEGOCIO.csproj.AssemblyReference.cache
+D:\COSTOS\NEGOCIO\obj\Debug\NEGOCIO.csproj.CoreCompileInputs.cache
+D:\COSTOS\NEGOCIO\obj\Debug\NEGOCIO.csproj.CopyComplete
+D:\COSTOS\NEGOCIO\obj\Debug\NEGOCIO.dll
+D:\COSTOS\NEGOCIO\obj\Debug\NEGOCIO.pdb

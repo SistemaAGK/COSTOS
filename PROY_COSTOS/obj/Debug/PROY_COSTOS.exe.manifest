@@ -174,14 +174,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MANEJO_DATOS.dll" size="36352">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MANEJO_DATOS.dll" size="36864">
       <assemblyIdentity name="MANEJO_DATOS" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>oIHBtPRpozXcbW6ThF2r/lmIYqTTKkvsIjvYwiUoyUA=</dsig:DigestValue>
+        <dsig:DigestValue>hJktjpU73wk2bmTQ0iUuh6z5ZkWtJFZAS/Y5OdTlr7U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -205,19 +205,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>/YGqqd/7+ZwYn3mmLy7tLM6jO97fqu5lU0ghyEKYQac=</dsig:DigestValue>
+        <dsig:DigestValue>KI+sky6Q57BDfHow/ye8bYaSx3E7kypSS5fXtcQI9r4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PROY_COSTOS.exe" size="309744">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PROY_COSTOS.exe" size="311792">
       <assemblyIdentity name="PROY_COSTOS" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WQ1hVpwFCirfNhiujDCrpiIcXiN58FGAhyylgXS/Tqc=</dsig:DigestValue>
+        <dsig:DigestValue>9ETR2GfTx4M9xO0iPV+9ZIt7yb4qMLct7xk6A4BbI7g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

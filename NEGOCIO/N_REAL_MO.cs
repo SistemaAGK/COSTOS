@@ -46,13 +46,17 @@ namespace NEGOCIO
         {
             return oMD.lstLog();
         }
-        public string opeUpdateRealMO(int campaña, int mes, int sede)
+        public string opeUpdateRealMO(int campaña, int mes, int sede, int cultivo)
         {
-            return oMD.opeUpdateRealMO(campaña, mes, sede);
+            return oMD.opeUpdateRealMO(campaña, mes, sede, cultivo);
         }
         public DataTable lst_Sedes()
         {
             return oMD.lstSedes();
+        }
+        public DataTable lst_Cultivos()
+        {
+            return oMD.lstCultivos();
         }
         public DataTable lst_RealMO(int campania, int sede, int mes)
         {
@@ -62,5 +66,9 @@ namespace NEGOCIO
         {
             return oMD.lstSedesImportar();
         }
+        //public DataTable lst_CultivosImportar()
+        //{
+        //    return oMD.lstSedesImportar();
+        //}
     }
 }
