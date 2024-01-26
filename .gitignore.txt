@@ -1,0 +1,8 @@
+.vs/
+*packages
+MANEJO_DATOS/bin/
+MANEJO_DATOS/obj/
+NEGOCIO/bin/Debug/
+NEGOCIO/obj/Debug/
+PROY_COSTOS/bin/
+PROY_COSTOS/obj/

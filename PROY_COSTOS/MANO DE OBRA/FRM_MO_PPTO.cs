@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ClosedXML.Excel;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace PROY_COSTOS.MANO_DE_OBRA
 {
@@ -51,45 +52,53 @@ namespace PROY_COSTOS.MANO_DE_OBRA
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            //          Configuracion de ventana para seleccionar un archivo
-            OpenFileDialog oOpenFileDialog = new OpenFileDialog();
-            oOpenFileDialog.Filter = "Excel Worbook|*.xlsx";
-
-            if (oOpenFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                cboHojas.Items.Clear();
-                dgvDatos.DataSource = null;
+                //          Configuracion de ventana para seleccionar un archivo
+                OpenFileDialog oOpenFileDialog = new OpenFileDialog();
+                oOpenFileDialog.Filter = "Excel Worbook|*.xlsx";
 
-                txtRuta.Text = oOpenFileDialog.FileName;
-
-                //              FileStream nos permite leer, escribir, abrir y cerrar archivos en un sistema de archivos, como matrices de bytes
-                FileStream fsSource = new FileStream(oOpenFileDialog.FileName, FileMode.Open, FileAccess.Read);
-
-
-                //ExcelReaderFactory.CreateBinaryReader = formato XLS
-                //ExcelReaderFactory.CreateOpenXmlReader = formato XLSX
-                //ExcelReaderFactory.CreateReader = XLS o XLSX
-                IExcelDataReader reader = ExcelReaderFactory.CreateReader(fsSource);
-
-                //              Convierte todas las hojas a un DataSet
-                dtsTablas = reader.AsDataSet(new ExcelDataSetConfiguration()
+                if (oOpenFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    ConfigureDataTable = (tableReader) => new ExcelDataTableConfiguration()
+                    cboHojas.Items.Clear();
+                    dgvDatos.DataSource = null;
+
+                    txtRuta.Text = oOpenFileDialog.FileName;
+
+                    //              FileStream nos permite leer, escribir, abrir y cerrar archivos en un sistema de archivos, como matrices de bytes
+                    FileStream fsSource = new FileStream(oOpenFileDialog.FileName, FileMode.Open, FileAccess.Read);
+
+
+                    //ExcelReaderFactory.CreateBinaryReader = formato XLS
+                    //ExcelReaderFactory.CreateOpenXmlReader = formato XLSX
+                    //ExcelReaderFactory.CreateReader = XLS o XLSX
+                    IExcelDataReader reader = ExcelReaderFactory.CreateReader(fsSource);
+
+                    //              Convierte todas las hojas a un DataSet
+                    dtsTablas = reader.AsDataSet(new ExcelDataSetConfiguration()
                     {
-                        UseHeaderRow = true
+                        ConfigureDataTable = (tableReader) => new ExcelDataTableConfiguration()
+                        {
+                            UseHeaderRow = true
+                        }
+                    });
+
+                    //              Obtenemos las tablas y añadimos sus nombres en el desplegable de hojas
+                    foreach (DataTable tabla in dtsTablas.Tables)
+                    {
+                        cboHojas.Items.Add(tabla.TableName);
                     }
-                });
+                    cboHojas.SelectedIndex = 0;
 
-                //              Obtenemos las tablas y añadimos sus nombres en el desplegable de hojas
-                foreach (DataTable tabla in dtsTablas.Tables)
-                {
-                    cboHojas.Items.Add(tabla.TableName);
+                    reader.Close();
+
                 }
-                cboHojas.SelectedIndex = 0;
-
-                reader.Close();
-
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ConfigurationManager.AppSettings["_Titulo_Popups"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -99,94 +108,101 @@ namespace PROY_COSTOS.MANO_DE_OBRA
 
         private void btnGuardarPptoMO_Click(object sender, EventArgs e)
         {
-            if (this.txtRuta.Text == "")
+            try
             {
-                MessageBox.Show("Debe Seleccionar una Hoja Excel de Entrada", "Indicadores Costos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            this.lblMensajesImportacion.Text = "Procesando Información...";
-            this.Refresh();
-
-            inicializaLabelsProceso();
-
-            dgvDatos.DataSource = dtsTablas.Tables[cboHojas.SelectedIndex];
-
-            int nume_linea = 2;
-            string rpta = "";
-
-            //          Borramos el contenido de la tabla temporal SQL
-            rpta = oN.opeTmpDeletePptoMO();
-
-            //          Cargamos en excel en una tabla temporal SQL
-            foreach (DataGridViewRow r in dgvDatos.Rows)
-            {
-                if ((Convert.ToString(r.Cells["ceco"].Value) != "") && (Convert.ToInt32(r.Cells["cod_labor"].Value) != 0) && (Convert.ToInt32(r.Cells["año"].Value) != 0) && (Convert.ToInt32(r.Cells["periodo"].Value) != 0))
+                if (this.txtRuta.Text == "")
                 {
-                    this.lblFE.Text = (nume_linea - 1).ToString();
-                    this.lblFE.Refresh();
-
-                    rpta = oN.opeTmpPptoMO(nume_linea,
-                                           Convert.ToString(r.Cells["ceco"].Value),
-                                           Convert.ToInt32(r.Cells["cod_labor"].Value),
-                                           Convert.ToInt32(r.Cells["año"].Value),
-                                           Convert.ToInt32(r.Cells["periodo"].Value),
-                                           Convert.ToDecimal(r.Cells["jornales"].Value)
-                                           );
-                    nume_linea = nume_linea + 1;
+                    MessageBox.Show("Debe Seleccionar una Hoja Excel de Entrada", "Indicadores Costos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
-            }
+                this.lblMensajesImportacion.Text = "Procesando Información...";
+                this.Refresh();
 
-            this.lblPE.Text = "100.00";
-            this.lblPE.Refresh();
+                inicializaLabelsProceso();
 
-            //          Ubicamos los errores y lo cargamos en el campo de observaciones
-            rpta = oN.opeTmpUpdatePptoMO();
+                dgvDatos.DataSource = dtsTablas.Tables[cboHojas.SelectedIndex];
 
-            //          Obtenemos el Resumen de la carga (Cantidad de Errores, Cantidad de Ok)
-            dtbrief = oN.lst_Brief();
+                int nume_linea = 2;
+                string rpta = "";
 
-            this.lblMensajesImportacion.Text = "";
-            this.Refresh();
+                //          Borramos el contenido de la tabla temporal SQL
+                rpta = oN.opeTmpDeletePptoMO();
 
-            if (dtbrief.Rows.Count > 0)
-            {
-                this.lblFV.Text = dtbrief.Rows[0]["ok"].ToString();
-                this.lblFV.Refresh();
-
-                this.lblPV.Text = dtbrief.Rows[0]["por_ok"].ToString();
-                this.lblPV.Refresh();
-
-                if (this.lblPV.Text == "100.00")
+                //          Cargamos en excel en una tabla temporal SQL
+                foreach (DataGridViewRow r in dgvDatos.Rows)
                 {
-                    if (MessageBox.Show("Se han validado correctamente " + this.lblFV.Text.Trim() + " Filas.\r\n" + "¿Esta seguro de proceder a la Actualización?", "Indicadores de Costos", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    if ((Convert.ToString(r.Cells["ceco"].Value) != "") && (Convert.ToInt32(r.Cells["cod_labor"].Value) != 0) && (Convert.ToInt32(r.Cells["año"].Value) != 0) && (Convert.ToInt32(r.Cells["periodo"].Value) != 0))
                     {
-                        //                      Calculamos y grabamos en la tabla definitiva de Presupuestos de Mano de Obra
-                        rpta = oN.opeUpdatePptoMO(Convert.ToInt32(this.cboCampaña.SelectedValue), Convert.ToInt32(this.cboVersiones.SelectedValue), Convert.ToInt32(this.chkNuevaVersion.Checked));
-                        this.lblPC.Text = "100.00";
-                        this.lblFC.Text = dtbrief.Rows[0]["ok"].ToString();
+                        this.lblFE.Text = (nume_linea - 1).ToString();
+                        this.lblFE.Refresh();
 
-                        MessageBox.Show("Actualización Concluída", "Indicadores Costos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        rpta = oN.opeTmpPptoMO(nume_linea,
+                                               Convert.ToString(r.Cells["ceco"].Value),
+                                               Convert.ToInt32(r.Cells["cod_labor"].Value),
+                                               Convert.ToInt32(r.Cells["año"].Value),
+                                               Convert.ToInt32(r.Cells["periodo"].Value),
+                                               Convert.ToDecimal(r.Cells["jornales"].Value)
+                                               );
+                        nume_linea = nume_linea + 1;
+                    }
 
-                        this.cargar_versiones();
+                }
+
+                this.lblPE.Text = "100.00";
+                this.lblPE.Refresh();
+
+                //          Ubicamos los errores y lo cargamos en el campo de observaciones
+                rpta = oN.opeTmpUpdatePptoMO();
+
+                //          Obtenemos el Resumen de la carga (Cantidad de Errores, Cantidad de Ok)
+                dtbrief = oN.lst_Brief();
+
+                this.lblMensajesImportacion.Text = "";
+                this.Refresh();
+
+                if (dtbrief.Rows.Count > 0)
+                {
+                    this.lblFV.Text = dtbrief.Rows[0]["ok"].ToString();
+                    this.lblFV.Refresh();
+
+                    this.lblPV.Text = dtbrief.Rows[0]["por_ok"].ToString();
+                    this.lblPV.Refresh();
+
+                    if (this.lblPV.Text == "100.00")
+                    {
+                        if (MessageBox.Show("Se han validado correctamente " + this.lblFV.Text.Trim() + " Filas.\r\n" + "¿Esta seguro de proceder a la Actualización?", "Indicadores de Costos", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                        {
+                            //                      Calculamos y grabamos en la tabla definitiva de Presupuestos de Mano de Obra
+                            rpta = oN.opeUpdatePptoMO(Convert.ToInt32(this.cboCampaña.SelectedValue), Convert.ToInt32(this.cboVersiones.SelectedValue), Convert.ToInt32(this.chkNuevaVersion.Checked));
+                            this.lblPC.Text = "100.00";
+                            this.lblFC.Text = dtbrief.Rows[0]["ok"].ToString();
+
+                            MessageBox.Show("Actualización Concluída", "Indicadores Costos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                            this.cargar_versiones();
+                        }
+                        else
+                            //                      Cargamos la tabla de log de errores para ser revisada y descargada 
+                            dgvLog.DataSource = oN.lst_Log();
                     }
                     else
-                        //                      Cargamos la tabla de log de errores para ser revisada y descargada 
+                    {
+                        //                  Cargamos la tabla de log de errores para ser revisada y descargada 
                         dgvLog.DataSource = oN.lst_Log();
+                        dgvLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+                        MessageBox.Show("Se presentaron Errores en el proceso de validación.\r\n" + " Revise el LOG de Carga y Reprocese", "Indicadores Costos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
-                {
-                    //                  Cargamos la tabla de log de errores para ser revisada y descargada 
+                    //             Cargamos la tabla de log de errores para ser revisada y descargada 
                     dgvLog.DataSource = oN.lst_Log();
-                    dgvLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-
-                    MessageBox.Show("Se presentaron Errores en el proceso de validación.\r\n" + " Revise el LOG de Carga y Reprocese", "Indicadores Costos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
-            else
-                //             Cargamos la tabla de log de errores para ser revisada y descargada 
-                dgvLog.DataSource = oN.lst_Log();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ConfigurationManager.AppSettings["_Titulo_Popups"].ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void inicializaLabelsProceso()
         {
